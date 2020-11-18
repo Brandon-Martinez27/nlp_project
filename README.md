@@ -2,4 +2,5 @@ NLP project work
 
 by Brandon Martinez and Luke Becker
 
-Hi this is the project README
+This is the project README.
+Making sure that I have access to posting.
