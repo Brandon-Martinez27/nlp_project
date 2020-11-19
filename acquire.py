@@ -25,11 +25,11 @@ def get_language_urls():
     # create empty list to hold urls
     urls = []
     # create list of languages to search for
-    languages = ['JavaScript', 'Python', 'Java', 'HTML']
+    languages = ['JavaScript', 'Python']
     # loop through the languages
     for language in languages:
         # loop throught the page numbers
-        for i in range(1,11):
+        for i in range(1,16):
             # each page for most starred repos on GH
             url = f'https://github.com/search?l={language}&p={i}&q=stars%3A%3E0&s=stars&type=Repositories'
             # append the url to the urls list
@@ -43,15 +43,17 @@ def get_all_urls(urls):
     '''
     # create empty list
     repo_urls = []
+    n=0
     # loop through each url in urls list
     for url in urls:
         # Make request and soup object using helper function
         soup = make_soup(url)
         # delay 1 second between fetch
-        sleep(1)
+        sleep(8)
+        n = n + 1
+        print(f"Scraping loop number {n}")
         # Create a list of the anchor elements that hold the urls.
         urls_list = soup.find_all('a', class_='v-align-middle')
-    
         # I'm using a set comprehension to return only unique urls.
         urls_set = {'https://github.com' + link.get('href') for link in urls_list}
         # I'm converting my set to a list of urls.
@@ -76,13 +78,15 @@ def get_repo_content(urls, cached=False):
 
         # Create an empty list to hold dictionaries
         articles = []
-
+        n=0
         # Loop through each url in our list of urls
         for url in urls:
 
             # Make request and soup object using helper
             soup = make_soup(url)
-
+            sleep(8)
+            n = n + 1
+            print(f"Scraping loop number {n}")
             # Save the programming language of each repo in variable language
             language = soup.find('span', class_='text-gray-dark text-bold mr-1').text
 

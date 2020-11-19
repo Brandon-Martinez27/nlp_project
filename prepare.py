@@ -114,6 +114,9 @@ def prep_repo_data(df, column, extra_words=[], exclude_words=[]):
     returns a df with the text article title, original text, stemmed text,
     lemmatized text, cleaned, tokenized, & lemmatized text with stopwords removed.
     '''
+    # drops duplicates but keeps the first instance
+    df = df.drop_duplicates(subset=None, keep='first')
+
     df['clean'] = df[column].apply(basic_clean)\
                             .apply(tokenize)\
                             .apply(remove_stopwords, 
