@@ -128,4 +128,30 @@ def prep_repo_data(df, column, extra_words=[], exclude_words=[]):
     
     df['lemmatized'] = df[column].apply(basic_clean).apply(lemmatize)
     
-    return df[['language', column, 'stemmed', 'lemmatized', 'clean']]
+    return df[['language', 'repo', column, 'stemmed', 'lemmatized', 'clean']]
+
+def add_columns(df):
+    # add a column that is a list of each word for each repo 
+    words = [re.sub(r'([^a-z0-9\s]|\s.\s)', '', doc).split() for doc in df.clean] 
+
+    # column name will be words, and the column will contain lists of the words in each doc
+    df = pd.concat([df, pd.DataFrame({'words': words})], axis=1)
+
+    # add a column that shows the length 
+    df['doc_length'] = [len(wordlist) for wordlist in df.words]
+    return df
+
+def split_repo_data(df):
+    from sklearn.model_selection import train_test_split
+
+    train_validate, test = train_test_split(df[['language', 
+                            'clean', 'words', 'doc_length']], 
+                                        stratify=df.language, 
+                                        test_size=.2, 
+                                        random_state=123)
+
+    train, validate = train_test_split(train_validate, 
+                                   stratify=train_validate.language, 
+                                   test_size=.25,
+                                   random_state=123)
+    return train, validate, test
