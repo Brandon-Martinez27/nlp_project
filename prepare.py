@@ -18,7 +18,7 @@ def basic_clean(string):
     This function takes in a string and
     returns the string normalized.
     '''
-    string = unicodedata.normalize('NFKC', string)\
+    string = unicodedata.normalize('NFKD', string)\
              .encode('ascii', 'ignore')\
              .decode('utf-8', 'ignore')
     string = re.sub(r'[^\w\s]', '', string).lower()
@@ -130,6 +130,8 @@ def prep_repo_data(df, column, extra_words=[], exclude_words=[]):
     
     return df[['language', 'repo', column, 'stemmed', 'lemmatized', 'clean']]
 
+
+
 def add_columns(df):
     # add a column that is a list of each word for each repo 
     words = [re.sub(r'([^a-z0-9\s]|\s.\s)', '', doc).split() for doc in df.clean] 
@@ -155,3 +157,7 @@ def split_repo_data(df):
                                    test_size=.25,
                                    random_state=123)
     return train, validate, test
+
+
+
+print("Prepare module loaded.")

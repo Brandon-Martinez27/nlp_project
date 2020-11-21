@@ -10,6 +10,8 @@ import nltk
 from nltk.tokenize.toktok import ToktokTokenizer
 from nltk.corpus import stopwords
 
+from sklearn.model_selection import train_test_split
+
 import env
 
 
@@ -210,7 +212,7 @@ def prep_repo_data(df, column, extra_words=[], exclude_words=[]):
 
 
 ##### This is the key function that returns 6 dataframes #####
-def train_validate_test(df):
+def train_validate_test(df, target_var):
     '''
     This function takes in a dataframe and splits it into 3 samples, 
     a test, which is 20% of the entire dataframe, 
@@ -229,13 +231,13 @@ def train_validate_test(df):
 
         
     # split train into X (dataframe, drop target) & y (series, keep target only)
-    X_train = train.drop(columns= ['target_var'])
-    X_validate = validate.drop(columns= ['target_var'])
-    X_test = test.drop(columns= ['target_var'])
+    X_train = train.drop(columns= [target_var])
+    X_validate = validate.drop(columns= [target_var])
+    X_test = test.drop(columns= [target_var])
 
-    y_train = train[['target_var']]
-    y_validate = validate[['target_var']]
-    y_test = test[['target_var']]
+    y_train = train[[target_var]]
+    y_validate = validate[[target_var]]
+    y_test = test[[target_var]]
 
     train_explore = train.copy()
     df_explore = df.copy()

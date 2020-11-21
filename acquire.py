@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 from time import sleep
 import os
 
-from sklearn.model_selection import train_test_split
+
 
 def make_soup(url):
     '''
