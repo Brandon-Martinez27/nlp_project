@@ -49,9 +49,9 @@
 ## Initial Thoughts & Hypotheses
 ### Thoughts
 > What's the proportion of each language in our data?
-What are the most common words in READMEs?
-Does the length of the README vary by programming language?
-What are the highest frequencies of word combinations? ie. ngrams
+> What are the most common words in READMEs?
+> Does the length of the README vary by programming language?
+> What are the highest frequencies of word combinations? ie. ngrams
 
 ### Hypotheses
 Is the average document length for **Python** READMEs longer or shorter than the overall average document length?
