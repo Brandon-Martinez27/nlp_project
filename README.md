@@ -52,7 +52,9 @@
 
 > What are the most common words in READMEs?
 
-> Does the length of the README vary by programming language?
+> Does the length of the README vary by programming language
+
+> Do different programming languages use a different number of unique words?
 
 > What are the highest frequencies of word combinations? ie. ngrams
 
