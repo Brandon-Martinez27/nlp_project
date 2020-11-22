@@ -1,4 +1,4 @@
-# Natural Language Processing Project
+![Repo-Header](https://github.com/Darden-NLP-Project-Brandon-and-Luke/nlp_project/blob/main/nlp_project_banner.png?raw=true)
 ## About the Project
 ### Goals
 - Build a dataset of Github repositories' readme text
