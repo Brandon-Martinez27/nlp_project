@@ -19,12 +19,17 @@ Where you got the data, inspiration, etc.
 > My first inspiration for writing Readme files from Maggie Giust's Heart Failure repository [here](https://github.com/magsgiust/heart_failure).
 
 ## Data Dictionary
-Describe the columns in your final dataset. Use [this link](https://www.tablesgenerator.com/markdown_tables) to easily create markdown tables.
 
-| Feature Name | Description          | Additional Info |
-|--------------|----------------------|-----------------|
-| x            | time in hours        | integer         |
-| y            | count of observation | float           |
+| Feature Name    | Description                                                                                                                           |
+|-----------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| language        | The language of the repository. Scraped this data directly from each Github repository's home page.                                   |
+| clean           | This is a string of characters (words) that have been cleaned through ACSII encoding, tokenizing, lemmatizing and removing stopwords. |
+| words           | A list of cleaned words from the `clean` column.                                                                                      |
+| doc_length      | Number of individual words in each document (row).                                                                                    |
+| pred_bow        | Our Logistic Regression Model's prediction using Bag of Words as the feature generator.                                               |
+| pred_tf         | Our Logistic Regression Model's prediction using TF-IDF as the feature generator.                                                     |
+| pred_tfidf_tree | Our Decision Tree Model's prediction that used TF-IDF as the feature generator.                                                       |
+
 
 ## Initial Thoughts & Hypotheses
 ### Thoughts
