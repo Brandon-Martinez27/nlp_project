@@ -64,7 +64,7 @@ Is the average document length for **Python** READMEs longer or shorter than the
 Two_tailed T-Test:
 ```
 Null: The average `doc_length` of the python readmes are not statistically different from the overall population average `doc_length`
-Alternative: The average `doc_length` of the python readmes **are** statistically different from the overall population average `doc_length`
+Alternative: The average `doc_length` of the python readmes are statistically different from the overall population average `doc_length`
 ```
 
 Is the average document length for **JavaScript** READMEs longer or shorter than the overall average document length?
@@ -72,7 +72,7 @@ Is the average document length for **JavaScript** READMEs longer or shorter than
 Two_tailed T-Test:
 ```
 Null: The average `doc_length` of the JavaScript readmes are not statistically different from the overall population average `doc_length`
-Alternative: The average `doc_length` of the JavaScript readmes **are** statistically different from the overall population average `doc_length`
+Alternative: The average `doc_length` of the JavaScript readmes are statistically different from the overall population average `doc_length`
 ```
 
 ## Project Steps
