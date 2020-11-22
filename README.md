@@ -19,7 +19,6 @@ Where you got the data, inspiration, etc.
 > My first inspiration for writing Readme files from Maggie Giust's Heart Failure repository [here](https://github.com/magsgiust/heart_failure).
 
 ## Data Dictionary
-Describe the columns in your final dataset. Use [this link](https://www.tablesgenerator.com/markdown_tables) to easily create markdown tables.
 
 | Feature Name    | Description                                                                                                                           |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------|
